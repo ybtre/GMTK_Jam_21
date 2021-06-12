@@ -6,11 +6,13 @@ using UnityEngine;
 public class StartGame : MonoBehaviour {
     [SerializeField] private LevelLoader levelLoader;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other) {
         Debug.Log("TriggerEnter");
         if (other.gameObject.GetComponent<Player>()) {
-            Debug.Log("TriggerEnter - Component");
-            levelLoader.LoadNextLevel();
+            if (Input.GetKeyDown(KeyCode.E)) {
+                Debug.Log("TriggerEnter - Component");
+                levelLoader.LoadNextLevel();
+            }
         }
     }
 }
