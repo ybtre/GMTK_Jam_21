@@ -30,7 +30,7 @@ public class Rope : MonoBehaviour
     {
         int totalSegments = Mathf.RoundToInt(Mathf.Max(Vector3.Distance(StartObject.transform.position, EndObject.transform.position), MaxLength));
         _segments = new GameObject[totalSegments];
-        Vector3 segmentScale = new Vector3(0.1f, 0.1f, 0.1f);
+        Vector3 segmentScale = new Vector3(1f, 1f, 1f);
 
         _segments[0] = GenerateSegment("_segment_0", StartObject.transform.position, segmentScale);
         ConnectSegment(_segments[0], StartObject);
@@ -38,7 +38,7 @@ public class Rope : MonoBehaviour
 
         for (int i = 1; i < totalSegments; ++i)
         {
-            Vector3 segmentPosition = previousSegment.transform.position + new Vector3(0f, -0.2f, 0f);
+            Vector3 segmentPosition = previousSegment.transform.position + new Vector3(0f, 0.2f, 0f);
             var segment = GenerateSegment($"_segment_{i}", segmentPosition, segmentScale);
 
             ConnectSegment(segment, previousSegment);
@@ -59,21 +59,28 @@ public class Rope : MonoBehaviour
         segment.transform.position = position;
         segment.transform.localScale = scale;
 
-        segment.AddComponent<CapsuleCollider>().height = 2f;
+        var collider = segment.AddComponent<CapsuleCollider>();
+        collider.height = 0.4f;
+        collider.radius = 0.2f;
 
         var joint = segment.AddComponent<HingeJoint>();
-        joint.anchor = new Vector3(0f, 1f, 0f);
+        joint.anchor = Vector3.zero;
+        joint.axis = Vector3.zero;
         joint.enableCollision = true;
 
         JointSpring spring = joint.spring;
-        spring.spring = 25f;
+        spring.spring = 1f;
         spring.damper = 50f;
+        spring.targetPosition = 70f;
         joint.useSpring = true;
         joint.spring = spring;
 
+        joint.enablePreprocessing = false;
+
         var physBody = segment.GetComponent<Rigidbody>();
-        physBody.mass = 1f;
-        physBody.drag = 0.5f;
+        physBody.mass = 2f;
+        physBody.drag = 1f;
+        physBody.angularDrag = 500f;
         physBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
         return segment;
@@ -84,7 +91,7 @@ public class Rope : MonoBehaviour
         if (segment.TryGetComponent(out HingeJoint joint))
         {
             joint.connectedBody = to.GetComponent<Rigidbody>();
-            joint.connectedAnchor = new Vector3(0f, -1f, 0f);
+            joint.connectedAnchor = Vector3.zero;
         }
     }
 
