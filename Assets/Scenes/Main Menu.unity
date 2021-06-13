@@ -11303,8 +11303,8 @@ Transform:
   - {fileID: 877459415}
   - {fileID: 343952184}
   - {fileID: 1677998849}
-  - {fileID: 40354783}
   - {fileID: 524381639}
+  - {fileID: 40354783}
   - {fileID: 2136432818}
   m_Father: {fileID: 812074525}
   m_RootOrder: 7
@@ -18360,6 +18360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 1171218384}
+  startGameText: {fileID: 1841253938614541681, guid: 05b745724ed559a458dc34a75d306017,
+    type: 3}
 --- !u!1001 &1706368053
 PrefabInstance:
   m_ObjectHideFlags: 0
