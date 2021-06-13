@@ -33,6 +33,7 @@ public class Rope : MonoBehaviour
         Vector3 segmentScale = new Vector3(0.1f, 0.1f, 0.1f);
 
         _segments[0] = GenerateSegment("_segment_0", StartObject.transform.position, segmentScale);
+        ConnectSegment(_segments[0], StartObject);
         GameObject previousSegment = _segments[0];
 
         for (int i = 1; i < totalSegments; ++i)
@@ -71,8 +72,8 @@ public class Rope : MonoBehaviour
         joint.spring = spring;
 
         var physBody = segment.GetComponent<Rigidbody>();
-        physBody.mass = 0.25f;
-        physBody.drag = 1f;
+        physBody.mass = 1f;
+        physBody.drag = 0.5f;
         physBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
         return segment;
