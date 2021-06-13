@@ -13,7 +13,7 @@ public class GroundScoring : MonoBehaviour {
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Ground")) {
             if (canAddToScore) {
                 Debug.Log("Prop: " + gameObject.name + " Collided with Ground");
-                scoreMngr.AddToScore(PropScore);
+                scoreMngr.AddToScore(PropScore, gameObject);
                 canAddToScore = false;
             }
         }
