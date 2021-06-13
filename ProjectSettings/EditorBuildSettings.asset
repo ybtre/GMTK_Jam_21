@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: eef97a318dea0ca48aae0abf3d336b2c
   - enabled: 1
-    path: Assets/Scenes/ritschie.unity
-    guid: b8c56f7d58b9ee84caf2c4543df7cf06
+    path: Assets/Scenes/Level.unity
+    guid: 0ad0c73c7acf8314291bebb1e8a7cf7f
   m_configObjects: {}
