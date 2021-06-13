@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dither
+  m_Name: Dither-Props
   m_Shader: {fileID: -6465566751694194690, guid: 1fc0f350ef36f7b4296af768135cf3c5,
     type: 3}
   m_ShaderKeywords: 
@@ -73,7 +73,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_58D40726: {r: 0.18792273, g: 0.7969352, b: 0.9716981, a: 0}
+    - Color_58D40726: {r: 0.8705883, g: 0.8705883, b: 0.8588236, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
