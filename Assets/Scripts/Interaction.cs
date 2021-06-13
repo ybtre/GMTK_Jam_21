@@ -23,7 +23,7 @@ public class Interaction : MonoBehaviour {
         if (IsActive)
         {
             EndInteractionCountdown();
-            scoreMngr.AddToScore(objScore.PropScore * 2);
+            scoreMngr.AddToScore(objScore.PropScore * 2, this.gameObject);
         }
     }
 
