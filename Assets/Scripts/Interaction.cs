@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Interaction : MonoBehaviour
-{
+public class Interaction : MonoBehaviour {
+    [SerializeField] private ScoreManager scoreMngr;
+
+    private GroundScoring objScore;
+    
     public bool IsActive;
     public Countdown Countdown;
     public GameObject OutlineObject;
@@ -12,6 +15,7 @@ public class Interaction : MonoBehaviour
     private void Start()
     {
         IsActive = false;
+        objScore = GetComponent<GroundScoring>();
     }
 
     public void Interact()
@@ -19,6 +23,7 @@ public class Interaction : MonoBehaviour
         if (IsActive)
         {
             EndInteractionCountdown();
+            scoreMngr.AddToScore(objScore.PropScore * 2);
         }
     }
 

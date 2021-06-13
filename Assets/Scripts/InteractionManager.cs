@@ -45,7 +45,7 @@ public class InteractionManager : MonoBehaviour
                 if (_interactables[i].TimeUntilActivation < 0f)
                 {
                     _interactables[i].Interaction.StartInteractionCountdown();
-                    _interactables[i].TimeUntilActivation = Random.Range(5f, 15f);
+                    _interactables[i].TimeUntilActivation = Random.Range(5f, 25f);
                 }
             }
         }
