@@ -13,8 +13,8 @@ public class Billboard : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        transform.SetPositionAndRotation(new Vector3(transform.position.x, 12f, transform.position.z), Quaternion.identity);
         transform.rotation = Quaternion.LookRotation((transform.position - _playerCamera.transform.position), Vector3.up);
     }
 }

@@ -16,6 +16,7 @@ public class RopeRenderer : MonoBehaviour
     void Update()
     {
         int totalPoints = Rope.GetSegmentCount();
+        Renderer.positionCount = totalPoints;
         for (int i = 0; i < totalPoints; i++)
         {
             Renderer.SetPosition(i, Rope.GetSegmentTransform(i).position);

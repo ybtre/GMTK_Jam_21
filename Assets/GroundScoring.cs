@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GroundScoring : MonoBehaviour {
     
-    [SerializeField] private int PropScore = 100;
+    [SerializeField] public int PropScore = 100;
     [SerializeField] private ScoreManager scoreMngr;
 
     private bool canAddToScore = true;

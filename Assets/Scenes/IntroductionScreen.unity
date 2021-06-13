@@ -919,7 +919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jordan Glendinning
+  m_Text: Cruickshanks
 --- !u!222 &1264345801
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -997,7 +997,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hristo vuchev
+  m_Text: Devpilgrim
 --- !u!222 &1434754260
 CanvasRenderer:
   m_ObjectHideFlags: 0
